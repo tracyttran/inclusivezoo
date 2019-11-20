@@ -24,11 +24,20 @@ while 1 :
 		out+= ser.readline().decode('ascii')
 	if out!= '':
 		print (out)
-		print (len(out))
-		if 'R1' in out:
-			print ("confirmed")
+		if 'dist' in out:
+			print ("dist confirmed")
+			playsound("screaming_armadillo.mp3")
+			ser.write('done/n'.encode())
+			print ("mp3 finished, message sent")
+		elif 'R1' in out:
+			print ("R1 confirmed")
 			playsound('tail_armadillo.mp3')
+			ser.write('done/n'.encode())
+			print ("mp3 finished, message sent")
 		elif 'R2' in out:
-			playsound('armadillotest.mp3')
-       		# playsound('armadillotest.mp3')
+			print ("R2 confirmed")
+			playsound('feet_armadillo.mp3')
+			ser.write('done/n'.encode())
+			print ("mp3 finished, message sent")
+		
 	time.sleep(1)
