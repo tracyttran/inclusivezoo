@@ -26,7 +26,7 @@ while 1 :
 		print (out)
 		if 'dist' in out:
 			print ("dist confirmed")
-			playsound("screaming_armadillo.mp3")
+			playsound("intro_armadillo.mp3")
 			ser.write('done/n'.encode())
 			print ("mp3 finished, message sent")
 		elif 'R1' in out:
@@ -37,6 +37,11 @@ while 1 :
 		elif 'R2' in out:
 			print ("R2 confirmed")
 			playsound('feet_armadillo.mp3')
+			ser.write('done/n'.encode())
+			print ("mp3 finished, message sent")
+		elif 'R3' in out:
+			print ("R3 confirmed")
+			playsound('screaming_armadillo.mp3')
 			ser.write('done/n'.encode())
 			print ("mp3 finished, message sent")
 		
