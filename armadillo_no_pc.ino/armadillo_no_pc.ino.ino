@@ -39,10 +39,10 @@ void loop()
     
   
     distanceVal = analogRead(proximitySensor); 
-    if (distanceVal > distanceThreshold) {
-      Serial.println("dist");
-      sensed = true;
-    }
+    //if (distanceVal > distanceThreshold) {
+    //  Serial.println("dist");
+      //sensed = true;
+    //}
       
       
      if(!sensed && sensor1 >= 1000)
@@ -51,20 +51,27 @@ void loop()
         digitalWrite(led1,HIGH);
         sensed = true;
      }
-     else{
-        digitalWrite(led1,LOW);
-     }  
+  
   
      
      if(!sensed && sensor2 >=1000) {
         Serial.println("R2");
-        digitalWrite(led2, HIGH);
+        digitalWrite(led1, HIGH);
         sensed = true;
-     }else {
-        digitalWrite(led2, LOW);
+     }
+     if(!sensed && sensor3 >=1000) {
+        Serial.println("R3");
+        digitalWrite(led1, HIGH);
+        sensed = true;
+     }
+     if(!sensed && sensor4 >=1000) {
+        Serial.println("R4");
+        digitalWrite(led1, HIGH);
+        sensed = true;
      }
   if (sensed) {
     delay(1000);
+    digitalWrite(led1, LOW);
   }
 
 }

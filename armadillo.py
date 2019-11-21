@@ -44,5 +44,10 @@ while 1 :
 			playsound('screaming_armadillo.mp3')
 			ser.write('done/n'.encode())
 			print ("mp3 finished, message sent")
+		elif 'R4' in out:
+			print ("R4 confirmed")
+			playsound('back_armadillo.mp3')
+			ser.write('done/n'.encode())
+			print ("mp3 finished, message sent")
 		
 	time.sleep(1)
